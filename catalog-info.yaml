@@ -4,7 +4,7 @@ metadata:
   name: weather-api
   description: A simple weather API to manage city weather data
   tags:
-    - api
+    - anb
     - swagger
 spec:
   type: openapi
