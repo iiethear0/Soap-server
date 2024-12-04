@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Weather API
-  description: A simple API to manage and retrieve weather data for cities.
+  description: A simple API to manage and retrieve weather data for cities using XML format.
   version: 1.0.0
 servers:
   - url: http://localhost:5000
@@ -9,7 +9,7 @@ servers:
 paths:
   /weather:
     get:
-      summary: Retrieve a list of weather data
+      summary: Retrieve all weather data
       responses:
         '200':
           description: A list of weather data for cities
@@ -30,6 +30,11 @@ paths:
       responses:
         '201':
           description: Weather record created successfully
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Weather'
+
   /weather/{city}:
     get:
       summary: Get weather data for a specific city
@@ -67,6 +72,10 @@ paths:
       responses:
         '200':
           description: Weather data updated successfully
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Weather'
         '404':
           description: Weather record not found
     delete:
@@ -83,6 +92,7 @@ paths:
           description: Weather record deleted successfully
         '404':
           description: Weather record not found
+
 components:
   schemas:
     Weather:
