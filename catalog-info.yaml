@@ -1,18 +1,12 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: API
 metadata:
   name: weather-api
   description: A simple weather API to manage city weather data
-  tags:
-    - api
-    - weather
-  annotations:
-    backstage.io/managed-by: weather-team
 spec:
-  type: service
+  type: openapi
   lifecycle: production
   owner: weather-team
-  links:
-    - url: http://localhost:5000/api/weather
-      title: Weather API
-      rel: self
+  definitions:
+    swagger:
+      url: http://localhost:5000/api-docs
