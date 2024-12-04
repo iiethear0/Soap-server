@@ -11,4 +11,4 @@ spec:
   lifecycle: production
   owner: Faisal
   definition:
-    $text: https://github.com/iiethear0/Soap-server/blob/main/openapi.yaml
+    $text: https://raw.githubusercontent.com/iiethear0/Soap-server/main/openapi.yaml
