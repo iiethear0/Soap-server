@@ -5,7 +5,7 @@ metadata:
   description: A simple weather API to manage city weather data
   tags:
     - anb
-    - swagger
+    - faisal
 spec:
   type: openapi
   lifecycle: production
