@@ -4,8 +4,8 @@ info:
   description: A simple API to manage and retrieve weather data for cities using XML format.
   version: 1.0.0
 servers:
-  - url: http://localhost:5000
-    description: Local Weather API server
+  - url: http://localhost:5000/api
+    description: Local Weather API server with /api prefix
 paths:
   /weather:
     get:
