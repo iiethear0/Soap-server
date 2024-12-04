@@ -3,37 +3,12 @@ kind: API
 metadata:
   name: weather-api
   description: A simple weather API to manage city weather data
+  tags:
+    - api
+    - swagger
 spec:
   type: openapi
   lifecycle: production
-  owner: weather-team
+  owner: Faisal
   definition:
-    # Option 1: Link to the OpenAPI spec (JSON/YAML file)
-    # url: http://localhost:5000/openapi.json
-
-    # Option 2: Inline OpenAPI specification (if you want to include it directly)
-    # You can replace this with your actual OpenAPI spec content
-    openapi: |
-      openapi: 3.0.0
-      info:
-        title: Weather API
-        version: 1.0.0
-        description: A simple weather API to manage city weather data
-      paths:
-        /weather:
-          get:
-            summary: Get weather data for a specific city
-            responses:
-              200:
-                description: Weather data for the city
-                content:
-                  application/json:
-                    schema:
-                      type: object
-                      properties:
-                        city:
-                          type: string
-                        temperature:
-                          type: string
-                        condition:
-                          type: string
+    $text: https://github.com/iiethear0/weather-api/blob/main/openapi.yaml
