@@ -14,7 +14,7 @@ paths:
         '200':
           description: A list of weather data for cities
           content:
-            application/json:
+            application/xml:
               schema:
                 type: array
                 items:
@@ -24,7 +24,7 @@ paths:
       requestBody:
         required: true
         content:
-          application/json:
+          application/xml:
             schema:
               $ref: '#/components/schemas/Weather'
       responses:
@@ -44,7 +44,7 @@ paths:
         '200':
           description: The requested weather data
           content:
-            application/json:
+            application/xml:
               schema:
                 $ref: '#/components/schemas/Weather'
         '404':
@@ -61,7 +61,7 @@ paths:
       requestBody:
         required: true
         content:
-          application/json:
+          application/xml:
             schema:
               $ref: '#/components/schemas/Weather'
       responses:
