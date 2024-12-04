@@ -1,0 +1,107 @@
+openapi: 3.0.0
+info:
+  title: Weather API
+  description: A simple API to manage and retrieve weather data for cities.
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000
+    description: Local Weather API server
+paths:
+  /weather:
+    get:
+      summary: Retrieve a list of weather data
+      responses:
+        '200':
+          description: A list of weather data for cities
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Weather'
+    post:
+      summary: Create a new weather record
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Weather'
+      responses:
+        '201':
+          description: Weather record created successfully
+  /weather/{city}:
+    get:
+      summary: Get weather data for a specific city
+      parameters:
+        - in: path
+          name: city
+          required: true
+          schema:
+            type: string
+          description: The name of the city
+      responses:
+        '200':
+          description: The requested weather data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Weather'
+        '404':
+          description: Weather record not found
+    put:
+      summary: Update weather data for a specific city
+      parameters:
+        - in: path
+          name: city
+          required: true
+          schema:
+            type: string
+          description: The name of the city
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Weather'
+      responses:
+        '200':
+          description: Weather data updated successfully
+        '404':
+          description: Weather record not found
+    delete:
+      summary: Delete weather data for a specific city
+      parameters:
+        - in: path
+          name: city
+          required: true
+          schema:
+            type: string
+          description: The name of the city
+      responses:
+        '200':
+          description: Weather record deleted successfully
+        '404':
+          description: Weather record not found
+components:
+  schemas:
+    Weather:
+      type: object
+      properties:
+        city:
+          type: string
+          description: The name of the city
+        temperature:
+          type: string
+          description: The temperature of the city
+        condition:
+          type: string
+          description: The weather condition (e.g., Sunny, Rainy)
+      required:
+        - city
+        - temperature
+        - condition
+      example:
+        city: Riyadh
+        temperature: "30°C"
+        condition: Sunny
