@@ -2,6 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: weather-api
+  namespace: external-systems
   description: A simple weather API to manage city weather data
   tags:
     - anb
@@ -10,5 +11,9 @@ spec:
   type: openapi
   lifecycle: production
   owner: fisal7003
+  providesApis:
+    - petstore
+    - internal/streetlights
+    - hello-world
   definition:
     $text: https://github.com/iiethear0/Soap-server/blob/main/openapi.yaml
