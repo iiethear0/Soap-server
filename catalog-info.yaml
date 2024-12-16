@@ -2,6 +2,9 @@ apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: weather-api
+  links:
+    - url: http://localhost:5000/api-docs/#/default/get_weather
+      title: My Dashboard
   description: A simple weather API to manage city weather data
   tags:
     - anb
@@ -23,3 +26,10 @@ spec:
   owner: Faisal
   system: swagger
   providesApis: [weather-api]
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: swagger
+spec:
+  owner: fisal7003
