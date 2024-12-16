@@ -23,7 +23,7 @@ metadata:
 spec:
   type: openapi
   lifecycle: production
-  owner: Faisal
+  owner: fisal7003
   system: swagger
   providesApis: [weather-api]
 ---
