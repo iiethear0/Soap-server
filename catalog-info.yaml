@@ -12,3 +12,14 @@ spec:
   owner: fisal7003
   definition:
     $text: https://github.com/iiethear0/Soap-server/blob/main/openapi.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: middleware
+spec:
+  type: openapi
+  lifecycle: production
+  owner: Faisal
+  system: swagger
+  providesApis: [weather-api]
