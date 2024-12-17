@@ -23,7 +23,7 @@ metadata:
 spec:
   type: openapi
   lifecycle: production
-  owner: fisal7003
+  owner: middleware
   system: swagger
   providesApis: [weather-api]
 ---
@@ -32,4 +32,4 @@ kind: System
 metadata:
   name: swagger
 spec:
-  owner: fisal7003
+  owner: middleware
