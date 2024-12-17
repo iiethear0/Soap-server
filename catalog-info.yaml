@@ -8,11 +8,11 @@ metadata:
   description: A simple weather API to manage city weather data
   tags:
     - anb
-    - fisal7003
+    - middleware
 spec:
   type: openapi
   lifecycle: production
-  owner: fisal7003
+  owner: middleware
   definition:
     $text: https://github.com/iiethear0/Soap-server/blob/main/openapi.yaml
 ---
